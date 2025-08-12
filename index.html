@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphora - Posters</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="assets/logo.png" alt="logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#product">All Products</a></li>
+                <li><a href="#solutions">Customizable</a></li>
+                <li><a href="#resources">Non Customizable</a></li>
+                <li><a href="#opensource">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                <input type="text" class="search-input" placeholder="Search Posters...">
+            </div>
+            <div class="auth-buttons">
+                <a href="#signin" class="btn btn-secondary">Contact Us</a>
+                <a href="all-products.html" class="btn btn-primary">See Posters</a>
+            </div>
+        </div>
+    </nav>
+
+     
+    <section class="hero">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Premium Poster for Inspired Spaces</h1>
+            <p>"Posters Built to Impress"</p>
+            <div class="hero-actions">
+                <div class="email-signup">
+                    <a href="all-products.html"><button class="btn-signup">See Posters</button></a>
+                </div>
+                <a href="#copilot" class="btn-copilot">Try Customizable</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="products">
+        <div class="products-content">
+            <h2>Art in Every Details</h2>
+            <p>Quality You Can See and Feel.</p>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <img class="poster1" src="assets/Poster 1 WaterMark.jpg">
+                    <h3>Rs.99</h3>
+                    <h4>Customizable</h4>
+                    <a href="#copilot" class="btn">View Details</a>
+                </div>
+                
+                <div class="product-card">
+                    <img class="poster2" src="assets/Poster 2 WaterMark.jpg">
+                    <h3>Rs.99</h3>
+                    <h4>Customizable</h4>
+                    <a href="#actions" class="btn">Learn more</a>
+                </div>
+                
+                <div class="product-card">
+                    <img class="poster3" src="assets/Poster 3 WaterMark.jpg">
+                    <h3>Rs.99</h3>
+                    <h4>Customizable</h4>
+                    <a href="#codespaces" class="btn">Learn more</a>
+                </div>
+                
+                <div class="product-card">
+                    <img class="poster4" src="assets/Project 4 WaterMark.jpg">
+                    <h3>Rs.99</h3>
+                    <h4>Customizable</h4>
+                    <a href="#security" class="btn">Learn more</a>
+                </div>
+                
+                <div class="product-card">
+                    <img class="poster5" src="assets/Project 5 WaterMark.jpg">
+                    <h3>Rs.99</h3>
+                    <h4>Customizable</h4>
+                    <a href="#enterprise" class="btn">Learn more</a>
+                </div>
+                
+                <div class="product-card">
+                    <img class="poster6" src="assets/Poster 6 WaterMark.jpg">
+                    <h3>Rs.99</h3>
+                    <h4>Customizable</h4>
+                    <a href="#mobile" class="btn">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Email signup functionality
+        document.querySelector('.btn-signup').addEventListener('click', function() {
+            const email = document.querySelector('.email-input').value;
+            if (email) {
+                alert(`Thank you for signing up with email: ${email}`);
+                document.querySelector('.email-input').value = '';
+            } else {
+                alert('Please enter a valid email address');
+            }
+        });
+
+        // Search functionality
+        document.querySelector('.search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value;
+                if (searchTerm) {
+                    alert(`Searching for: ${searchTerm}`);
+                    this.value = '';
+                }
+            }
+        });
+
+        // Add parallax effect to floating elements
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating-element');
+            const speed = 0.5;
+
+            parallax.forEach((element, index) => {
+                const yPos = -(scrolled * speed * (index + 1) * 0.3);
+                element.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+
+        // Add navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(13, 17, 23, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(13, 17, 23, 0.8)';
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe product cards for animation
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
